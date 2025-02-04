@@ -1,9 +1,9 @@
-from .safedict import safedict
+from .safedict import SafeDict
 
 
 __all__ = [
-    "safedict"
+    "SafeDict"
 ]
 
-__version__ = "1.0.6"
+__version__ = "1.0.7"
 
