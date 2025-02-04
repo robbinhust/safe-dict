@@ -1,10 +1,10 @@
-# SafeDict
+# safedict
 
 Python does not natively support a chaining operator (like `?.` in JavaScript) for safely accessing nested dictionary keys. This often leads to verbose code to check if a key exists or if its value is `None` before accessing deeper levels.
 
-**SafeDict** is here to solve this problem.
+**safedict** is here to solve this problem.
 
-SafeDict is a Python library that provides a safe way to access nested dictionary keys. When a key does not exist or its value is None, it returns None by default (or a user-specified default value). Unlike standard dictionaries, it prevents errors when accessing deeper levels of nested keys, making your code cleaner, easier to read, and less error-prone.
+safedict is a Python library that provides a safe way to access nested dictionary keys. When a key does not exist or its value is None, it returns None by default (or a user-specified default value). Unlike standard dictionaries, it prevents errors when accessing deeper levels of nested keys, making your code cleaner, easier to read, and less error-prone.
 
 ---
 
@@ -26,10 +26,10 @@ pip install safe-dict
 
 ## **Usage**
 ```python
-from safe_dict import SafeDict
+import safedict
 
 # Example with a nested dictionary
-data = SafeDict({"a": {"b": {"c": 42}}})
+data = safedict({"a": {"b": {"c": 42}}})
 
 # Safe key access using get
 print(data.get("a").get("b").get("c"))  # Output: 42
@@ -65,10 +65,10 @@ if "a" in data and data["a"] is not None:
 print(data.get("a", {}).get("d", {}).get("c")) # AttributeError: 'NoneType' object has no attribute 'get', because "d" is not a dictionary.
 ```
 
-### With SafeDict:
+### With safedict:
 You can write the same logic much more cleanly:
 ```python
-data = SafeDict({"a": {"b": {"c": 42}}})
+data = safedict({"a": {"b": {"c": 42}}})
 
 print(data.get("a", {}).get("b", {}).get("c"))  # Output: 42
 print(data.get("a", {}).get("d", {}).get("c"))  # Output: None
@@ -76,4 +76,4 @@ print(data.get("a", {}).get("d", {}).get("c"))  # Output: None
 ---
 
 ## **License**
-SafeDict is licensed under the MIT License, allowing you to use and modify it freely.
+safedict is licensed under the MIT License, allowing you to use and modify it freely.
